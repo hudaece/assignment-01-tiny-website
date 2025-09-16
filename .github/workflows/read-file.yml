@@ -1,0 +1,18 @@
+name: Read and Output index.html Content
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  read-file:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Read and output index.html content
+      run: |
+        echo "Contents of index.html:"
+        cat index.html
